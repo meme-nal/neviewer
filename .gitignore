@@ -34,10 +34,6 @@
 # Build
 build/
 
-# Model
-model/
-log.txt
-
 # VSCode
 .vscode/
 
