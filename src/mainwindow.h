@@ -15,6 +15,7 @@
 #include <QComboBox>
 #include <QSlider>
 #include <QInputDialog>
+#include <QScrollBar>
 
 class Widget : public QWidget {
 private:

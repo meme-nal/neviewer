@@ -104,10 +104,14 @@ Widget::Widget(QWidget *parent)
   btn->setText("Choose language");
   connect(btn, SIGNAL(clicked()), this, SLOT(getMyItem()));
 
+  QScrollBar* scrollbar = new QScrollBar(this);
+  scrollbar->setOrientation(Qt::Vertical);
+
   hbox->addWidget(label);
   hbox->addWidget(_ledit);
   hbox->addWidget(btn);
-
+  hbox->addWidget(scrollbar);
+  
 }
 
 Widget::~Widget() {}
