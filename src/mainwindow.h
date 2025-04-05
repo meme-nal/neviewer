@@ -3,38 +3,48 @@
 
 #include <QMainWindow>
 #include <QLabel>
-#include <QPushButton>
-#include <QRadioButton>
-#include <QMenu>
 #include <QLineEdit>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <QGridLayout>
-#include <QCheckBox>
-#include <QSpinBox>
-#include <QComboBox>
-#include <QSlider>
-#include <QInputDialog>
 #include <QScrollBar>
 
-class Widget : public QWidget {
+#include <QMessageBox>
+
+#include <QString>
+#include <QList>
+#include <QMap>
+
+#include <QTextStream>
+#include <QDir>
+#include <QFileInfo>
+#include <QFileInfoList>
+#include <QFile>
+#include <QFileDialog>
+#include <QDataStream>
+
+QT_BEGIN_NAMESPACE
+namespace Ui { class MainWindow; }
+QT_END_NAMESPACE
+
+class MainWindow : public QMainWindow {
 private:
   Q_OBJECT
 
 public:
-  Widget(QWidget *parent = nullptr);
-  ~Widget();
+  MainWindow(QWidget *parent = nullptr);
+  ~MainWindow();
+
+  signals:
+
+  public slots:
+    void run();
+    void on_pushButton_browse_clicked();
 
 private:
-  QLabel* _label;
-  QRadioButton* _radbtn1;
-  QRadioButton* _radbtn2;
-  QRadioButton* _radbtn3;
-  QLineEdit*    _ledit;
+  QString _filePath;
 
-public slots:
-  void ChangeText();
-  void getMyItem();
+  Ui::MainWindow* ui;
 
 };
 #endif // MAINWINDOW_H
